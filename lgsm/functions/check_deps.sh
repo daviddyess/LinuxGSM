@@ -188,6 +188,8 @@ fn_install_missing_deps(){
 				echo -e "sudo dnf install ${array_deps_missing[*]}"
 			elif [ "$(command -v yum 2>/dev/null)" ]; then
 				echo -e "sudo yum install ${array_deps_missing[*]}"
+			elif [ "$(command -v zypper 2>/dev/null)" ]; then
+				echo -e "sudo zypper install ${array_deps_missing[*]}"
 			fi
 		fi
 
