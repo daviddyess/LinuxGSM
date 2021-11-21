@@ -172,7 +172,7 @@ fn_install_missing_deps(){
 				cmd="sudo yum -y install ${array_deps_missing[*]}"
 				eval "${cmd}"
 			elif [ "$(command -v zypper 2>/dev/null)" ]; then
-				cmd="sudo zypper -n install ${array_deps_missing[*]}"
+				cmd="sudo zypper -n install ${array_deps_missing[*]} --auto-agree-with-licenses"
 				eval "${cmd}"
 			fi
 			autodepinstall="$?"
