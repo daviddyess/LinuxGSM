@@ -171,6 +171,9 @@ fn_install_missing_deps(){
 			elif [ "$(command -v yum 2>/dev/null)" ]; then
 				cmd="sudo yum -y install ${array_deps_missing[*]}"
 				eval "${cmd}"
+			elif [ "$(command -v zypper 2>/dev/null)" ]; then
+				cmd="sudo zypper -y install ${array_deps_missing[*]}"
+				eval "${cmd}"
 			fi
 			autodepinstall="$?"
 
